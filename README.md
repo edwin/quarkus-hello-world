@@ -44,3 +44,9 @@ no main manifest attribute, in target\hello-world-quarkus-1.0-SNAPSHOT.jar
 ``` 
 
 above error happens because we are executing the wrong jar file within `target` folder, the right one (despite not an uberjar file) is actually on folder `target\quarkus-app` 
+
+## Docker build
+Run below command to do a docker build 
+```
+$ docker build -t hello-world-quarkus .
+```
