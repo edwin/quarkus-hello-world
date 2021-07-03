@@ -16,10 +16,12 @@ RUN microdnf install curl ca-certificates ${JAVA_PACKAGE} \
     && echo "securerandom.source=file:/dev/urandom" >> /etc/alternatives/jre/conf/security/java.security
 
 ENV JAVA_OPTIONS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
-COPY --chown=1001 target/quarkus-app/lib/ /deployments/lib/
-COPY --chown=1001 target/quarkus-app/*.jar /deployments/
-COPY --chown=1001 target/quarkus-app/app/ /deployments/app/
-COPY --chown=1001 target/quarkus-app/quarkus/ /deployments/quarkus/
+COPY target/quarkus-app/lib/ /deployments/lib/
+COPY target/quarkus-app/*.jar /deployments/
+COPY target/quarkus-app/app/ /deployments/app/
+COPY target/quarkus-app/quarkus/ /deployments/quarkus/
+
+RUN chown -R 1001 /deployments
 
 EXPOSE 8080
 USER 1001

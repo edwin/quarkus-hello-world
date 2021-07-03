@@ -50,3 +50,10 @@ Run below command to do a docker build
 ```
 $ docker build -t hello-world-quarkus .
 ```
+
+And run it by using below command
+```
+$ docker run hello-world-quarkus
+```
+
+Make sure to set the database connection on `application.properties` correctly first.
