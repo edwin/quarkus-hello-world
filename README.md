@@ -1,6 +1,5 @@
 # A Simple Hello-World CRUD Rest API with Quarkus 
 
-Connecting between Java Application with Keycloak for Authentication and Authorization example. 
 
  ## Tools
  - Java 11
